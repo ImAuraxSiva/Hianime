@@ -1,0 +1,51 @@
+{
+  "name": "hianime-discord",
+  "version": "1.0.0",
+  "description": "HiAnime Discord Rich Presence",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder --win",
+    "release": "electron-builder --win --publish always"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@cliqz/adblocker-electron": "^1.34.0",
+    "@xhayper/discord-rpc": "^1.3.4",
+    "cross-fetch": "^4.1.0",
+    "discord-rpc": "^4.0.1",
+    "electron-updater": "^6.8.9"
+  },
+  "devDependencies": {
+    "electron": "^44.0.0",
+    "electron-builder": "^26.15.3"
+  },
+  "build": {
+    "appId": "com.yourname.hianime",
+    "productName": "Hianime",
+    "asar": true,
+    "files": [
+      "**/*",
+      "!dist"
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true
+    },
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "ImAuraxSiva",
+        "repo": "Hianime"
+      }
+    ]
+  }
+}
